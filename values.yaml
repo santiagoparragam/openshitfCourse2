@@ -13,7 +13,7 @@ replicaCount: 1
 
 image:
   repository: santiagoparraga/holamundobasespm2
-  tag: "build-14"        # cambia aquí tu build
+  tag: "build-15"        # cambia aquí tu build
   pullPolicy: Always
 
 service:
