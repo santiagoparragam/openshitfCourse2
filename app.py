@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello_world():
-try:
-    return 'Hola desde app B', 200
-except Exception as e:
+    try:
+    	return 'Hola desde app B', 200
+    except Exception as e:
         # Catch any unexpected errors during the request handling
         print(f"An error occurred in hello_world: {e}", file=sys.stderr)
         
