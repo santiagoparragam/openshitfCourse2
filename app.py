@@ -5,7 +5,19 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def hello_world():
+try:
     return 'Hola desde app B', 200
+except Exception as e:
+        # Catch any unexpected errors during the request handling
+        print(f"An error occurred in hello_world: {e}", file=sys.stderr)
+        
+        # Return a standard HTTP 500 Internal Server Error response
+        error_response = {
+            "error": "Internal Server Error.......",
+            "message": str(e)
+        }
+        return jsonify(error_response), 500
+    # ---------------------------------
 
 @app.route('/health', methods=['GET'])
 def call_health():
